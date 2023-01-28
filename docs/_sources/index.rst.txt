@@ -1,0 +1,58 @@
+.. pyGrating documentation master file, created by
+   sphinx-quickstart on Sat Jan 28 22:54:37 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to pyGrating's documentation!
+=====================================
+
+pyGrating is a python module to reduce Ultraviolet Imaging Telescope (UVIT) Grating spectra. An image reduced using `CCDLAB`_ is required as input. The ``GratingImage`` module can identify all sources in the image and ``GratingSpectum`` module converts the 2D spectrum to 1D calibrated (wavelength and flux) spectrum.
+
+Installation
+------------
+Add the ``pygrating.py`` to your working directory (`GitHub`_).
+
+
+Requirements
+~~~~~~~~~~~~
+I recommend that you install the `Anaconda Distribution`_. 
+pyGrating has following requirements:
+
+* ``numpy`` >= 1.21.5
+* ``scipy`` >= 1.7.3
+* ``astropy`` >= 5.0.4
+* ``specutils`` >= 1.7.0
+* ``matplotlib`` >= 3.5.1
+
+Caution!
+~~~~~~~~
+The software is under active development.
+
+Citation
+--------
+Dewangan, 2021, JApA, 42, 49 [1]_
+Tandon, et al., AJ, 159, 158 [2]_
+
+
+.. [1] https://ui.adsabs.harvard.edu/abs/2021JApA...42...49D/abstract
+.. [2] https://ui.adsabs.harvard.edu/abs/2020AJ....159..158T/abstract
+.. _GitHub: https://github.com/jikrant3
+.. _CCDLAB: https://github.com/user29A/CCDLAB
+.. _Anaconda Distribution: https://www.anaconda.com/products/individual
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   getting_started
+   modules
+   changlog
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

@@ -1,0 +1,14 @@
+.. currentmodule:: pygrating.pygrating
+
+   
+:func:`plot_spectrum`
+---------------------
+.. autofunction:: plot_spectrum
+
+:func:`save_spectrum`
+---------------------
+.. autofunction:: save_spectrum
+
+:func:`load_spectrum`
+---------------------
+.. autofunction:: load_spectrum
