@@ -2,7 +2,7 @@
 ``pyGrating`` is a python module to reduce Ultraviolet Imaging Telescope (UVIT/AstroSat) Grating spectra. An image reduced using [CCDLAB](https://github.com/user29A/CCDLAB) is required as input. The ``GratingImage`` module can identify all sources in the image and ``GratingSpectum`` module converts the 2D spectrum to 1D calibrated (wavelength and flux) spectrum.
 
 ## Installation
-Add the ``pygrating.py`` to your working directory ([GitHub](https://github.com/jikrant3)).
+Add the ``pygrating.py`` to your working directory ([GitHub](https://github.com/jikrant3/pyGrating/blob/main/pygrating/pygrating.py)).
 
 
 ### Requirements
