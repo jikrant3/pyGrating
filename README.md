@@ -4,7 +4,7 @@
 ## pgGrating documentation is at [jikrant3.github.io/pyGrating/](https://jikrant3.github.io/pyGrating)
 
 ## Installation
-Add the ``pygrating.py`` to your working directory ([GitHub](https://github.com/jikrant3/pyGrating/blob/main/pygrating/pygrating.py)).
+Add the ``pygrating.py`` and ``data`` folder to your working directory ([GitHub](https://github.com/jikrant3/pyGrating/blob/main/pygrating/pygrating.py)).
 
 
 ### Requirements
