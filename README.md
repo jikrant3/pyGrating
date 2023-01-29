@@ -22,7 +22,7 @@ I recommend that you install the [Anaconda Distribution](https://www.anaconda.co
 The software is under active development.
 
 ## Citation
-Jadhav 2023 [![DOI](https://zenodo.org/badge/594533919.svg)](https://zenodo.org/badge/latestdoi/594533919)
+Jadhav 2023, pyGrating, DOI: 10.5281/zenodo.7579951 [![DOI](https://zenodo.org/badge/594533919.svg)](https://zenodo.org/badge/latestdoi/594533919)
 
 Tandon, et al. [2020, AJ, 159, 158](https://ui.adsabs.harvard.edu/abs/2020AJ....159..158T/abstract)
 
