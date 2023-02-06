@@ -14,7 +14,7 @@ Loading UVIT grating image using ``GratingImage``
 
 .. code:: ipython3
 
-    file_name = 'data/HZ 4_FUV_Grating1.fits'
+    file_name = 'data/HZ 4_FUV_Grating1.fits.gz'
     image = pg.GratingImage(file_name)
 
 
@@ -43,7 +43,7 @@ Identifying sources
 ~~~~~~~~~~~~~~~~~~~
 
 -  Detects sources by averaging across dispersion axis
--  Identifies peaks based on prominance
+-  Identifies peaks based on prominence
 
 .. code:: ipython3
 
