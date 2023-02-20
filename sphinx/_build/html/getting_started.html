@@ -1,0 +1,507 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Code Documentation" href="modules.html" /><link rel="prev" title="Welcome to pyGrating’s documentation!" href="index.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>Getting Started - pyGrating 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">pyGrating 1.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Code Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gratingimage.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">GratingImage</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="gratingspectrum.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">GratingSpectrum</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="util_functions.html">Utility functions (i/o)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changlog.html">Changlog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygrating</span> <span class="k">as</span> <span class="nn">pg</span>
+</pre></div>
+</div>
+<section id="loading-uvit-grating-image-using-gratingimage">
+<h2>Loading UVIT grating image using <code class="docutils literal notranslate"><span class="pre">GratingImage</span></code><a class="headerlink" href="#loading-uvit-grating-image-using-gratingimage" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The dispersion axis should be along the x axis of the image.</p></li>
+<li><p>The file is assumed to be reduced using CCDLAB. If not, there could
+be errors while importing metadata.</p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;data/HZ 4_FUV_Grating1.fits.gz&#39;</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">GratingImage</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HZ</span> <span class="mi">4</span>
+    <span class="n">OBS_ID</span>   <span class="o">=</span> <span class="n">C03_013T01_9000001586</span>
+    <span class="n">DETECTOR</span> <span class="o">=</span> <span class="n">FUV</span>
+    <span class="n">FILTERID</span> <span class="o">=</span> <span class="n">Grating1</span>
+    <span class="n">RDCDTIME</span> <span class="o">=</span> <span class="mf">791.551</span> <span class="n">s</span>
+</pre></div>
+</div>
+<section id="plotting-the-image">
+<h3>Plotting the image<a class="headerlink" href="#plotting-the-image" title="Permalink to this heading">#</a></h3>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/output_5_0.jpg" src="_images/output_5_0.jpg" />
+</section>
+<section id="identifying-sources">
+<h3>Identifying sources<a class="headerlink" href="#identifying-sources" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Detects sources by averaging across dispersion axis</p></li>
+<li><p>Identifies peaks based on prominence</p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="o">.</span><span class="n">identify_sources</span><span class="p">(</span><span class="n">prominence</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<pre class="literal-block">C:UsersuserDocumentsworkM67_grism_spectrapygrating.py:130: RuntimeWarning: Mean of empty slice
+  row_wise_counts   = np.log10(np.nanmean(self.data_smooth, axis=1))
+WARNING: Input data contains invalid values (NaNs or infs), which were automatically clipped. [astropy.stats.sigma_clipping]</pre>
+<img alt="_images/output_7_1.jpg" src="_images/output_7_1.jpg" />
+</section>
+</section>
+<section id="spectra-extraction-using-gratingspectrum">
+<h2>Spectra extraction using <code class="docutils literal notranslate"><span class="pre">GratingSpectrum</span></code><a class="headerlink" href="#spectra-extraction-using-gratingspectrum" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Minimum inputs are:</p>
+<ul>
+<li><p>image : Gratingimage</p></li>
+<li><p>ypix : y value of the source [pix]</p></li>
+<li><p>upix_bkg : y value of the background region [pix]</p></li>
+</ul>
+</li>
+<li><p>Outputs</p>
+<ul>
+<li><p>spectra of order -1 and -2 depending on the calibration status as
+follows:</p>
+<ul>
+<li><p>FUV_Grating1 has order -1 and -2</p></li>
+<li><p>FUV_Grating2 has order -2</p></li>
+<li><p>NUV_Grating has order -1</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">GratingSpectrum</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">YPIX</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">ypix_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">YPIX_bkg</span><span class="o">=</span><span class="mi">2500</span><span class="p">,</span>    <span class="c1"># necessary</span>
+                         <span class="n">xpix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cross_disp_buffer</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>                  <span class="c1"># optional</span>
+<span class="n">source</span><span class="o">.</span><span class="n">plot_all</span><span class="p">()</span>
+</pre></div>
+</div>
+<pre class="literal-block">C:UsersuserDocumentsworkM67_grism_spectrapygrating.py:193: RuntimeWarning: divide by zero encountered in power
+  self.fractional_error_Poisson = self.spec_1d.value**-0.5</pre>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">&lt;</span><span class="n">Figure</span> <span class="n">size</span> <span class="mi">1440</span><span class="n">x720</span> <span class="k">with</span> <span class="mi">10</span> <span class="n">Axes</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">&lt;</span><span class="n">Axes</span><span class="p">:</span><span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;center&#39;</span><span class="p">:</span><span class="s1">&#39;HZ 4  y=2231&#39;</span><span class="p">}</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Axes</span><span class="p">:</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="o">&lt;</span><span class="n">Axes</span><span class="p">:</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;ct / pix&#39;</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="o">&lt;</span><span class="n">Axes</span><span class="p">:</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Angstrom&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;ct / (Angstrom s)&#39;</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="o">&lt;</span><span class="n">Axes</span><span class="p">:</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Angstrom&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;erg / (Angstrom cm2 s)&#39;</span><span class="o">&gt;</span><span class="p">],</span>
+       <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="_images/output_10_2.jpg" src="_images/output_10_2.jpg" />
+<section id="plotting-individual-spectrum">
+<h3>Plotting individual spectrum<a class="headerlink" href="#plotting-individual-spectrum" title="Permalink to this heading">#</a></h3>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">.</span><span class="n">plot_spectrum</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">spectrum_m1</span><span class="p">)</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">plot_spectrum</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">spectrum_m2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">AxesSubplot</span><span class="p">:</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Angstrom&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;erg / (Angstrom cm2 s)&#39;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<img alt="_images/output_12_1.jpg" src="_images/output_12_1.jpg" />
+<img alt="_images/output_12_2.jpg" src="_images/output_12_2.jpg" />
+</section>
+<section id="saving-spectra-and-plots">
+<h3>Saving spectra and plots<a class="headerlink" href="#saving-spectra-and-plots" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Spectra are saved as Astropy Qtables (which included units and
+errors)</p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source</span><span class="o">.</span><span class="n">save_all</span><span class="p">(</span><span class="n">folder_path</span><span class="o">=</span><span class="s1">&#39;data/&#39;</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Saved</span> <span class="n">data</span><span class="o">/</span><span class="n">HZ</span> <span class="mi">4</span><span class="n">_FUV_Grating1_2231_m1</span><span class="o">.</span><span class="n">fits</span>
+<span class="n">Saved</span> <span class="n">data</span><span class="o">/</span><span class="n">HZ</span> <span class="mi">4</span><span class="n">_FUV_Grating1_2231_m2</span><span class="o">.</span><span class="n">fits</span>
+</pre></div>
+</div>
+</section>
+<section id="loading-and-plotting-saved-spectrum">
+<h3>Loading and plotting saved spectrum<a class="headerlink" href="#loading-and-plotting-saved-spectrum" title="Permalink to this heading">#</a></h3>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spectrum</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">load_spectrum</span><span class="p">(</span><span class="s1">&#39;data/HZ 4_FUV_Grating1_2231_m1.fits&#39;</span><span class="p">)</span>
+<span class="n">spectrum</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Spectrum1D</span><span class="p">(</span><span class="n">flux</span><span class="o">=&lt;</span><span class="n">Quantity</span> <span class="p">[</span><span class="mf">7.52920285e-14</span><span class="p">,</span> <span class="mf">4.47650444e-14</span><span class="p">,</span> <span class="mf">6.60952076e-14</span><span class="p">,</span> <span class="mf">6.38335013e-14</span><span class="p">,</span>
+           <span class="mf">7.08446397e-14</span><span class="p">,</span> <span class="mf">4.53738511e-14</span><span class="p">,</span> <span class="mf">6.26937331e-14</span><span class="p">,</span> <span class="mf">5.16301974e-14</span><span class="p">,</span>
+           <span class="mf">7.12793807e-14</span><span class="p">,</span> <span class="mf">5.48660419e-14</span><span class="p">,</span> <span class="mf">5.58522583e-14</span><span class="p">,</span> <span class="mf">5.83373997e-14</span><span class="p">,</span>
+           <span class="mf">5.10037209e-14</span><span class="p">,</span> <span class="mf">4.76337872e-14</span><span class="p">,</span> <span class="mf">4.74115547e-14</span><span class="p">,</span> <span class="mf">6.69570061e-14</span><span class="p">,</span>
+           <span class="mf">5.35336725e-14</span><span class="p">,</span> <span class="mf">5.90936319e-14</span><span class="p">,</span> <span class="mf">6.09934350e-14</span><span class="p">,</span> <span class="mf">4.53699202e-14</span><span class="p">,</span>
+           <span class="mf">5.51127881e-14</span><span class="p">,</span> <span class="mf">6.23635606e-14</span><span class="p">,</span> <span class="mf">6.13769598e-14</span><span class="p">,</span> <span class="mf">6.61372424e-14</span><span class="p">,</span>
+           <span class="mf">8.45924968e-14</span><span class="p">,</span> <span class="mf">6.28622358e-14</span><span class="p">,</span> <span class="mf">5.87547638e-14</span><span class="p">,</span> <span class="mf">7.31085763e-14</span><span class="p">,</span>
+           <span class="mf">5.67447570e-14</span><span class="p">,</span> <span class="mf">6.08421076e-14</span><span class="p">,</span> <span class="mf">7.22689964e-14</span><span class="p">,</span> <span class="mf">5.59752019e-14</span><span class="p">,</span>
+           <span class="mf">6.90222415e-14</span><span class="p">,</span> <span class="mf">5.73515790e-14</span><span class="p">,</span> <span class="mf">6.00576024e-14</span><span class="p">,</span> <span class="mf">7.06072492e-14</span><span class="p">,</span>
+           <span class="mf">5.78250684e-14</span><span class="p">,</span> <span class="mf">7.31619440e-14</span><span class="p">,</span> <span class="mf">6.44783523e-14</span><span class="p">,</span> <span class="mf">7.21997678e-14</span><span class="p">,</span>
+           <span class="mf">5.19543734e-14</span><span class="p">,</span> <span class="mf">7.53509048e-14</span><span class="p">,</span> <span class="mf">5.83412350e-14</span><span class="p">,</span> <span class="mf">6.08994593e-14</span><span class="p">,</span>
+           <span class="mf">6.96560377e-14</span><span class="p">,</span> <span class="mf">6.13480470e-14</span><span class="p">,</span> <span class="mf">6.00374668e-14</span><span class="p">,</span> <span class="mf">7.72269965e-14</span><span class="p">,</span>
+           <span class="mf">6.89142397e-14</span><span class="p">,</span> <span class="mf">7.01827178e-14</span><span class="p">,</span> <span class="mf">5.86401555e-14</span><span class="p">,</span> <span class="mf">7.06522924e-14</span><span class="p">,</span>
+           <span class="mf">6.47734488e-14</span><span class="p">,</span> <span class="mf">8.14856583e-14</span><span class="p">,</span> <span class="mf">8.07223061e-14</span><span class="p">,</span> <span class="mf">8.86870147e-14</span><span class="p">,</span>
+           <span class="mf">8.63647028e-14</span><span class="p">,</span> <span class="mf">7.34582025e-14</span><span class="p">,</span> <span class="mf">5.94052998e-14</span><span class="p">,</span> <span class="mf">7.49056732e-14</span><span class="p">,</span>
+           <span class="mf">8.18227460e-14</span><span class="p">,</span> <span class="mf">9.27395326e-14</span><span class="p">,</span> <span class="mf">9.18298061e-14</span><span class="p">,</span> <span class="mf">7.49139484e-14</span><span class="p">,</span>
+           <span class="mf">8.27520310e-14</span><span class="p">,</span> <span class="mf">8.98024000e-14</span><span class="p">,</span> <span class="mf">7.94011759e-14</span><span class="p">,</span> <span class="mf">7.50318289e-14</span><span class="p">,</span>
+           <span class="mf">9.41257007e-14</span><span class="p">,</span> <span class="mf">8.52342914e-14</span><span class="p">,</span> <span class="mf">7.14618409e-14</span><span class="p">,</span> <span class="mf">8.00559019e-14</span><span class="p">,</span>
+           <span class="mf">8.81003809e-14</span><span class="p">,</span> <span class="mf">7.98038492e-14</span><span class="p">,</span> <span class="mf">6.36583799e-14</span><span class="p">,</span> <span class="mf">7.09554296e-14</span><span class="p">,</span>
+           <span class="mf">5.92014304e-14</span><span class="p">,</span> <span class="mf">7.17924640e-14</span><span class="p">,</span> <span class="mf">6.89219214e-14</span><span class="p">,</span> <span class="mf">6.75893638e-14</span><span class="p">,</span>
+           <span class="mf">8.29692544e-14</span><span class="p">,</span> <span class="mf">5.43288257e-14</span><span class="p">,</span> <span class="mf">4.51946321e-14</span><span class="p">,</span> <span class="mf">5.55155388e-14</span><span class="p">,</span>
+           <span class="mf">1.04675787e-13</span><span class="p">,</span> <span class="mf">5.39842444e-14</span><span class="p">,</span> <span class="mf">7.04636101e-14</span><span class="p">,</span> <span class="mf">7.35440985e-14</span><span class="p">,</span>
+           <span class="mf">7.69159468e-14</span><span class="p">,</span> <span class="mf">6.50911853e-14</span><span class="p">,</span> <span class="mf">5.44863891e-14</span><span class="p">,</span> <span class="mf">2.73930878e-14</span><span class="p">,</span>
+           <span class="mf">1.03280223e-13</span><span class="p">,</span> <span class="mf">3.16076227e-14</span><span class="p">,</span> <span class="mf">5.53029459e-14</span><span class="p">,</span> <span class="mf">2.28679427e-14</span><span class="p">,</span>
+           <span class="mf">1.71809400e-14</span><span class="p">,</span> <span class="mf">1.65688562e-14</span><span class="p">,</span> <span class="mf">4.07314131e-14</span><span class="p">,</span> <span class="mf">1.86850602e-14</span><span class="p">,</span>
+           <span class="mf">1.67586194e-14</span><span class="p">,</span> <span class="mf">1.82109793e-14</span><span class="p">,</span> <span class="mf">2.18332378e-14</span><span class="p">,</span> <span class="mf">1.60622901e-14</span><span class="p">,</span>
+           <span class="mf">9.20376561e-15</span><span class="p">,</span> <span class="mf">1.16549474e-14</span><span class="p">,</span> <span class="mf">4.96316117e-15</span><span class="p">,</span> <span class="mf">2.90266860e-15</span><span class="p">,</span>
+           <span class="mf">1.28735313e-19</span><span class="p">,</span> <span class="mf">6.24412455e-15</span><span class="p">]</span> <span class="n">erg</span> <span class="o">/</span> <span class="p">(</span><span class="n">Angstrom</span> <span class="n">cm2</span> <span class="n">s</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">spectral_axis</span><span class="o">=&lt;</span><span class="n">SpectralAxis</span> <span class="p">[</span><span class="mf">1858.6882045</span><span class="p">,</span> <span class="mf">1852.8550045</span><span class="p">,</span> <span class="mf">1847.0218045</span><span class="p">,</span> <span class="mf">1841.1886045</span><span class="p">,</span> <span class="mf">1835.3554045</span><span class="p">,</span>
+   <span class="mf">1829.5222045</span><span class="p">,</span> <span class="mf">1823.6890045</span><span class="p">,</span> <span class="mf">1817.8558045</span><span class="p">,</span> <span class="mf">1812.0226045</span><span class="p">,</span> <span class="mf">1806.1894045</span><span class="p">,</span>
+   <span class="mf">1800.3562045</span><span class="p">,</span> <span class="mf">1794.5230045</span><span class="p">,</span> <span class="mf">1788.6898045</span><span class="p">,</span> <span class="mf">1782.8566045</span><span class="p">,</span> <span class="mf">1777.0234045</span><span class="p">,</span>
+   <span class="mf">1771.1902045</span><span class="p">,</span> <span class="mf">1765.3570045</span><span class="p">,</span> <span class="mf">1759.5238045</span><span class="p">,</span> <span class="mf">1753.6906045</span><span class="p">,</span> <span class="mf">1747.8574045</span><span class="p">,</span>
+   <span class="mf">1742.0242045</span><span class="p">,</span> <span class="mf">1736.1910045</span><span class="p">,</span> <span class="mf">1730.3578045</span><span class="p">,</span> <span class="mf">1724.5246045</span><span class="p">,</span> <span class="mf">1718.6914045</span><span class="p">,</span>
+   <span class="mf">1712.8582045</span><span class="p">,</span> <span class="mf">1707.0250045</span><span class="p">,</span> <span class="mf">1701.1918045</span><span class="p">,</span> <span class="mf">1695.3586045</span><span class="p">,</span> <span class="mf">1689.5254045</span><span class="p">,</span>
+   <span class="mf">1683.6922045</span><span class="p">,</span> <span class="mf">1677.8590045</span><span class="p">,</span> <span class="mf">1672.0258045</span><span class="p">,</span> <span class="mf">1666.1926045</span><span class="p">,</span> <span class="mf">1660.3594045</span><span class="p">,</span>
+   <span class="mf">1654.5262045</span><span class="p">,</span> <span class="mf">1648.6930045</span><span class="p">,</span> <span class="mf">1642.8598045</span><span class="p">,</span> <span class="mf">1637.0266045</span><span class="p">,</span> <span class="mf">1631.1934045</span><span class="p">,</span>
+   <span class="mf">1625.3602045</span><span class="p">,</span> <span class="mf">1619.5270045</span><span class="p">,</span> <span class="mf">1613.6938045</span><span class="p">,</span> <span class="mf">1607.8606045</span><span class="p">,</span> <span class="mf">1602.0274045</span><span class="p">,</span>
+   <span class="mf">1596.1942045</span><span class="p">,</span> <span class="mf">1590.3610045</span><span class="p">,</span> <span class="mf">1584.5278045</span><span class="p">,</span> <span class="mf">1578.6946045</span><span class="p">,</span> <span class="mf">1572.8614045</span><span class="p">,</span>
+   <span class="mf">1567.0282045</span><span class="p">,</span> <span class="mf">1561.1950045</span><span class="p">,</span> <span class="mf">1555.3618045</span><span class="p">,</span> <span class="mf">1549.5286045</span><span class="p">,</span> <span class="mf">1543.6954045</span><span class="p">,</span>
+   <span class="mf">1537.8622045</span><span class="p">,</span> <span class="mf">1532.0290045</span><span class="p">,</span> <span class="mf">1526.1958045</span><span class="p">,</span> <span class="mf">1520.3626045</span><span class="p">,</span> <span class="mf">1514.5294045</span><span class="p">,</span>
+   <span class="mf">1508.6962045</span><span class="p">,</span> <span class="mf">1502.8630045</span><span class="p">,</span> <span class="mf">1497.0298045</span><span class="p">,</span> <span class="mf">1491.1966045</span><span class="p">,</span> <span class="mf">1485.3634045</span><span class="p">,</span>
+   <span class="mf">1479.5302045</span><span class="p">,</span> <span class="mf">1473.6970045</span><span class="p">,</span> <span class="mf">1467.8638045</span><span class="p">,</span> <span class="mf">1462.0306045</span><span class="p">,</span> <span class="mf">1456.1974045</span><span class="p">,</span>
+   <span class="mf">1450.3642045</span><span class="p">,</span> <span class="mf">1444.5310045</span><span class="p">,</span> <span class="mf">1438.6978045</span><span class="p">,</span> <span class="mf">1432.8646045</span><span class="p">,</span> <span class="mf">1427.0314045</span><span class="p">,</span>
+   <span class="mf">1421.1982045</span><span class="p">,</span> <span class="mf">1415.3650045</span><span class="p">,</span> <span class="mf">1409.5318045</span><span class="p">,</span> <span class="mf">1403.6986045</span><span class="p">,</span> <span class="mf">1397.8654045</span><span class="p">,</span>
+   <span class="mf">1392.0322045</span><span class="p">,</span> <span class="mf">1386.1990045</span><span class="p">,</span> <span class="mf">1380.3658045</span><span class="p">,</span> <span class="mf">1374.5326045</span><span class="p">,</span> <span class="mf">1368.6994045</span><span class="p">,</span>
+   <span class="mf">1362.8662045</span><span class="p">,</span> <span class="mf">1357.0330045</span><span class="p">,</span> <span class="mf">1351.1998045</span><span class="p">,</span> <span class="mf">1345.3666045</span><span class="p">,</span> <span class="mf">1339.5334045</span><span class="p">,</span>
+   <span class="mf">1333.7002045</span><span class="p">,</span> <span class="mf">1327.8670045</span><span class="p">,</span> <span class="mf">1322.0338045</span><span class="p">,</span> <span class="mf">1316.2006045</span><span class="p">,</span> <span class="mf">1310.3674045</span><span class="p">,</span>
+   <span class="mf">1304.5342045</span><span class="p">,</span> <span class="mf">1298.7010045</span><span class="p">,</span> <span class="mf">1292.8678045</span><span class="p">,</span> <span class="mf">1287.0346045</span><span class="p">,</span> <span class="mf">1281.2014045</span><span class="p">,</span>
+   <span class="mf">1275.3682045</span><span class="p">,</span> <span class="mf">1269.5350045</span><span class="p">,</span> <span class="mf">1263.7018045</span><span class="p">,</span> <span class="mf">1257.8686045</span><span class="p">,</span> <span class="mf">1252.0354045</span><span class="p">,</span>
+   <span class="mf">1246.2022045</span><span class="p">,</span> <span class="mf">1240.3690045</span><span class="p">,</span> <span class="mf">1234.5358045</span><span class="p">,</span> <span class="mf">1228.7026045</span><span class="p">,</span> <span class="mf">1222.8694045</span><span class="p">]</span> <span class="n">Angstrom</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">uncertainty</span><span class="o">=</span><span class="n">StdDevUncertainty</span><span class="p">([</span><span class="mf">1.82012623e-14</span><span class="p">,</span> <span class="mf">1.28798121e-14</span><span class="p">,</span> <span class="mf">1.55136928e-14</span><span class="p">,</span>
+                   <span class="mf">1.45804767e-14</span><span class="p">,</span> <span class="mf">1.44075270e-14</span><span class="p">,</span> <span class="mf">1.06598927e-14</span><span class="p">,</span>
+                   <span class="mf">1.27427463e-14</span><span class="p">,</span> <span class="mf">1.09629930e-14</span><span class="p">,</span> <span class="mf">1.21796726e-14</span><span class="p">,</span>
+                   <span class="mf">1.01477150e-14</span><span class="p">,</span> <span class="mf">9.54346445e-15</span><span class="p">,</span> <span class="mf">9.55971509e-15</span><span class="p">,</span>
+                   <span class="mf">8.98211099e-15</span><span class="p">,</span> <span class="mf">8.13429441e-15</span><span class="p">,</span> <span class="mf">7.76614495e-15</span><span class="p">,</span>
+                   <span class="mf">9.25695157e-15</span><span class="p">,</span> <span class="mf">8.03937941e-15</span><span class="p">,</span> <span class="mf">8.01847312e-15</span><span class="p">,</span>
+                   <span class="mf">8.19751690e-15</span><span class="p">,</span> <span class="mf">6.60253712e-15</span><span class="p">,</span> <span class="mf">7.34547704e-15</span><span class="p">,</span>
+                   <span class="mf">7.76842356e-15</span><span class="p">,</span> <span class="mf">7.58482196e-15</span><span class="p">,</span> <span class="mf">7.88024395e-15</span><span class="p">,</span>
+                   <span class="mf">8.74665023e-15</span><span class="p">,</span> <span class="mf">7.38417825e-15</span><span class="p">,</span> <span class="mf">7.05605862e-15</span><span class="p">,</span>
+                   <span class="mf">7.81764116e-15</span><span class="p">,</span> <span class="mf">6.66454519e-15</span><span class="p">,</span> <span class="mf">6.95587252e-15</span><span class="p">,</span>
+                   <span class="mf">7.68193396e-15</span><span class="p">,</span> <span class="mf">6.53331634e-15</span><span class="p">,</span> <span class="mf">7.38072479e-15</span><span class="p">,</span>
+                   <span class="mf">6.73665213e-15</span><span class="p">,</span> <span class="mf">6.73641877e-15</span><span class="p">,</span> <span class="mf">7.30316064e-15</span><span class="p">,</span>
+                   <span class="mf">6.56983599e-15</span><span class="p">,</span> <span class="mf">7.36918388e-15</span><span class="p">,</span> <span class="mf">6.97330814e-15</span><span class="p">,</span>
+                   <span class="mf">7.26985834e-15</span><span class="p">,</span> <span class="mf">6.23672706e-15</span><span class="p">,</span> <span class="mf">7.54805478e-15</span><span class="p">,</span>
+                   <span class="mf">6.58439834e-15</span><span class="p">,</span> <span class="mf">6.74128273e-15</span><span class="p">,</span> <span class="mf">7.27925322e-15</span><span class="p">,</span>
+                   <span class="mf">6.79353963e-15</span><span class="p">,</span> <span class="mf">6.77777037e-15</span><span class="p">,</span> <span class="mf">7.69270456e-15</span><span class="p">,</span>
+                   <span class="mf">7.27928333e-15</span><span class="p">,</span> <span class="mf">7.41571766e-15</span><span class="p">,</span> <span class="mf">6.65837456e-15</span><span class="p">,</span>
+                   <span class="mf">7.46255591e-15</span><span class="p">,</span> <span class="mf">7.12638996e-15</span><span class="p">,</span> <span class="mf">8.11480524e-15</span><span class="p">,</span>
+                   <span class="mf">8.03837932e-15</span><span class="p">,</span> <span class="mf">8.61657172e-15</span><span class="p">,</span> <span class="mf">8.55739117e-15</span><span class="p">,</span>
+                   <span class="mf">7.84160033e-15</span><span class="p">,</span> <span class="mf">7.06602475e-15</span><span class="p">,</span> <span class="mf">8.18745647e-15</span><span class="p">,</span>
+                   <span class="mf">8.58682007e-15</span><span class="p">,</span> <span class="mf">9.01427648e-15</span><span class="p">,</span> <span class="mf">9.32734046e-15</span><span class="p">,</span>
+                   <span class="mf">8.44748654e-15</span><span class="p">,</span> <span class="mf">8.93396248e-15</span><span class="p">,</span> <span class="mf">9.53195545e-15</span><span class="p">,</span>
+                   <span class="mf">9.06886459e-15</span><span class="p">,</span> <span class="mf">8.74369219e-15</span><span class="p">,</span> <span class="mf">9.98095610e-15</span><span class="p">,</span>
+                   <span class="mf">9.67481595e-15</span><span class="p">,</span> <span class="mf">8.82206312e-15</span><span class="p">,</span> <span class="mf">9.81015256e-15</span><span class="p">,</span>
+                   <span class="mf">1.05612012e-14</span><span class="p">,</span> <span class="mf">1.01636236e-14</span><span class="p">,</span> <span class="mf">9.24342857e-15</span><span class="p">,</span>
+                   <span class="mf">9.69546129e-15</span><span class="p">,</span> <span class="mf">9.19414909e-15</span><span class="p">,</span> <span class="mf">1.06416510e-14</span><span class="p">,</span>
+                   <span class="mf">1.05777704e-14</span><span class="p">,</span> <span class="mf">1.07642187e-14</span><span class="p">,</span> <span class="mf">1.19208203e-14</span><span class="p">,</span>
+                   <span class="mf">9.70813596e-15</span><span class="p">,</span> <span class="mf">8.82008373e-15</span><span class="p">,</span> <span class="mf">1.04349943e-14</span><span class="p">,</span>
+                   <span class="mf">1.56974582e-14</span><span class="p">,</span> <span class="mf">1.09594191e-14</span><span class="p">,</span> <span class="mf">1.34848452e-14</span><span class="p">,</span>
+                   <span class="mf">1.46367704e-14</span><span class="p">,</span> <span class="mf">1.53034868e-14</span><span class="p">,</span> <span class="mf">1.52652144e-14</span><span class="p">,</span>
+                   <span class="mf">1.35416366e-14</span><span class="p">,</span> <span class="mf">9.07952047e-15</span><span class="p">,</span> <span class="mf">2.19328739e-14</span><span class="p">,</span>
+                   <span class="mf">9.94838661e-15</span><span class="p">,</span> <span class="mf">1.58994557e-14</span><span class="p">,</span> <span class="mf">9.26682508e-15</span><span class="p">,</span>
+                   <span class="mf">5.70330949e-15</span><span class="p">,</span> <span class="mf">5.82083885e-15</span><span class="p">,</span> <span class="mf">1.12688538e-14</span><span class="p">,</span>
+                   <span class="mf">7.03362244e-15</span><span class="p">,</span> <span class="mf">5.89341854e-15</span><span class="p">,</span> <span class="mf">6.84282670e-15</span><span class="p">,</span>
+                   <span class="mf">7.68638376e-15</span><span class="p">,</span> <span class="mf">5.65321797e-15</span><span class="p">,</span> <span class="mf">3.45861038e-15</span><span class="p">,</span>
+                   <span class="mf">3.86639351e-15</span><span class="p">,</span> <span class="mf">2.47152956e-15</span><span class="p">,</span> <span class="mf">1.43867452e-15</span><span class="p">,</span>
+                   <span class="mf">1.28171452e-19</span><span class="p">,</span> <span class="mf">2.20091563e-15</span><span class="p">]))</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pg</span><span class="o">.</span><span class="n">plot_spectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">AxesSubplot</span><span class="p">:</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Angstrom&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;erg / (Angstrom cm2 s)&#39;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<img alt="_images/output_17_1.jpg" src="_images/output_17_1.jpg" />
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="modules.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Code Documentation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Vikrant V. Jadhav
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Getting Started</a><ul>
+<li><a class="reference internal" href="#loading-uvit-grating-image-using-gratingimage">Loading UVIT grating image using <code class="docutils literal notranslate"><span class="pre">GratingImage</span></code></a><ul>
+<li><a class="reference internal" href="#plotting-the-image">Plotting the image</a></li>
+<li><a class="reference internal" href="#identifying-sources">Identifying sources</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spectra-extraction-using-gratingspectrum">Spectra extraction using <code class="docutils literal notranslate"><span class="pre">GratingSpectrum</span></code></a><ul>
+<li><a class="reference internal" href="#plotting-individual-spectrum">Plotting individual spectrum</a></li>
+<li><a class="reference internal" href="#saving-spectra-and-plots">Saving spectra and plots</a></li>
+<li><a class="reference internal" href="#loading-and-plotting-saved-spectrum">Loading and plotting saved spectrum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    </body>
+</html>
